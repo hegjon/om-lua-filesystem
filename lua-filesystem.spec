@@ -4,14 +4,14 @@
 %define oname luafilesystem
 
 Name:           lua-filesystem
-Version:        1.4.1
-Release:        %mkrel 2
+Version:        1.4.2
+Release:        %mkrel 1
 Summary:        FileSystem Tool for the Lua language
 
 Group:          Development/Other
 License:        MIT
 URL:            http://www.keplerproject.org/luafilesystem/
-Source0:        http://luaforge.net/frs/download.php/3345/%{oname}-%{version}.tar.gz
+Source0:        http://luaforge.net/frs/download.php/3931/%{oname}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:  lua-devel >= %{luaver}
 Requires:       lua >= %{luaver}
