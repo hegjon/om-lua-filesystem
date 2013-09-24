@@ -2,11 +2,10 @@
 %define lualibdir %{_libdir}/lua/%{luaver}
 %define luapkgdir %{_datadir}/lua/%{luaver}
 %define oname luafilesystem
-%define	debug_package	%nil
 
 Name:           lua-filesystem
 Version:        1.4.2
-Release:        2
+Release:        3
 Summary:        FileSystem Tool for the Lua language
 
 Group:          Development/Other
@@ -24,10 +23,11 @@ underlying directory structure and file attributes.
 %setup -q -n %{oname}-%{version}
 
 %build
-%make
+%setup_compile_flags
+%make CFLAGS="%{optflags}"
 
 %install
-make install PREFIX=$RPM_BUILD_ROOT/%{_prefix} LUA_LIBDIR=$RPM_BUILD_ROOT/%{lualibdir} LUA_DIR=$RPM_BUILD_ROOT/%{luapkgdir} SYS_BINDIR=$RPM_BUILD_ROOT/%{_bindir} LUA_INTERPRETER=%{_bindir}/lua
+make install PREFIX=%{buildroot}/%{_prefix} LUA_LIBDIR=%{buildroot}/%{lualibdir} LUA_DIR=%{buildroot}/%{luapkgdir} SYS_BINDIR=%{buildroot}/%{_bindir} LUA_INTERPRETER=%{_bindir}/lua
 
 %files
 %doc doc/us/*
