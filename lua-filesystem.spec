@@ -2,6 +2,7 @@
 %define lualibdir %{_libdir}/lua/%{luaver}
 %define luapkgdir %{_datadir}/lua/%{luaver}
 %define oname luafilesystem
+%define	debug_package	%nil
 
 Name:           lua-filesystem
 Version:        1.4.2
