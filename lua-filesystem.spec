@@ -5,7 +5,7 @@
 
 Name:           lua-filesystem
 Version:        1.4.2
-Release:        6
+Release:        7
 Summary:        FileSystem Tool for the Lua language
 
 Group:          Development/Other
