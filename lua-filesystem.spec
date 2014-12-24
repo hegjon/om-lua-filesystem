@@ -1,17 +1,18 @@
-%define luaver 5.1
+%define luaver 5.2
 %define lualibdir %{_libdir}/lua/%{luaver}
 %define luapkgdir %{_datadir}/lua/%{luaver}
 %define oname luafilesystem
+%define tarname	1_6_2
 
 Name:           lua-filesystem
-Version:        1.4.2
-Release:        10
+Version:        1.6.2
+Release:        1
 Summary:        FileSystem Tool for the Lua language
 
 Group:          Development/Other
 License:        MIT
 URL:            http://www.keplerproject.org/luafilesystem/
-Source0:        http://luaforge.net/frs/download.php/3931/%{oname}-%{version}.tar.gz
+Source0:	https://github.com/keplerproject/luafilesystem/archive/v%{tarname}.tar.gz
 BuildRequires:  lua-devel >= %{luaver}
 Requires:       lua >= %{luaver}
 
@@ -20,7 +21,7 @@ LuaFileSystem offers a portable way to access the
 underlying directory structure and file attributes.
 
 %prep
-%setup -q -n %{oname}-%{version}
+%setup -q -n %{oname}-%{tarname}
 
 %build
 %setup_compile_flags
