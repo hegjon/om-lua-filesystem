@@ -25,7 +25,7 @@ underlying directory structure and file attributes.
 
 %build
 %setup_compile_flags
-%make CFLAGS="%{optflags}"
+%make CFLAGS="%{optflags}" CC=%{__cc}
 
 %install
 make install PREFIX=%{buildroot}/%{_prefix} LUA_LIBDIR=%{buildroot}/%{lualibdir} LUA_DIR=%{buildroot}/%{luapkgdir} SYS_BINDIR=%{buildroot}/%{_bindir} LUA_INTERPRETER=%{_bindir}/lua
