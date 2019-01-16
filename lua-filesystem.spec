@@ -21,11 +21,15 @@ LuaFileSystem offers a portable way to access the
 underlying directory structure and file attributes.
 
 %prep
-%setup -q -n %{oname}-%{tarname}
+%autosetup -n %{oname}-%{tarname}
 
 %build
+%ifarch %{ix86} znver1
+%global optflags %{optflags} -fPIC
+%endif
+
 %setup_compile_flags
-%make CFLAGS="%{optflags}" CC=%{__cc}
+%make_build CFLAGS="%{optflags}" CC=%{__cc}
 
 %install
 make install PREFIX=%{buildroot}/%{_prefix} LUA_LIBDIR=%{buildroot}/%{lualibdir} LUA_DIR=%{buildroot}/%{luapkgdir} SYS_BINDIR=%{buildroot}/%{_bindir} LUA_INTERPRETER=%{_bindir}/lua
