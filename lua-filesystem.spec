@@ -6,7 +6,7 @@
 
 Name:           lua-filesystem
 Version:        1.6.2
-Release:        5
+Release:        6
 Summary:        FileSystem Tool for the Lua language
 
 Group:          Development/Other
@@ -29,7 +29,7 @@ underlying directory structure and file attributes.
 %endif
 
 %setup_compile_flags
-%make_build CFLAGS="%{optflags}" CC=%{__cc}
+%make_build CFLAGS="%{optflags} -fPIC" CC=%{__cc}
 
 %install
 make install PREFIX=%{buildroot}/%{_prefix} LUA_LIBDIR=%{buildroot}/%{lualibdir} LUA_DIR=%{buildroot}/%{luapkgdir} SYS_BINDIR=%{buildroot}/%{_bindir} LUA_INTERPRETER=%{_bindir}/lua
