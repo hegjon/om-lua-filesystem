@@ -5,7 +5,7 @@
 %define tarname	1_6_2
 
 Name:           lua-filesystem
-Version:	1_8_0
+Version:	1.8.0
 Release:	1
 Summary:        FileSystem Tool for the Lua language
 
