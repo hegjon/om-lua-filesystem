@@ -11,7 +11,7 @@ Summary:        FileSystem Tool for the Lua language
 
 Group:          Development/Other
 License:        MIT
-URL:            https://www.keplerproject.org/luafilesystem/
+URL:            https://lunarmodules.github.io/luafilesystem/
 Source0:	https://github.com/keplerproject/luafilesystem/archive/v%{tarname}.tar.gz
 BuildRequires:  lua-devel >= %{luaver}
 Requires:       lua >= %{luaver}
