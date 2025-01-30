@@ -1,6 +1,6 @@
-%define luaver 5.2
-%define lualibdir %{_libdir}/lua/%{luaver}
-%define luapkgdir %{_datadir}/lua/%{luaver}
+%define lua_version %(lua -e 'print(_VERSION)' | cut -d ' ' -f 2)
+%define lualibdir %{_libdir}/lua/%{lua_version}
+%define luapkgdir %{_datadir}/lua/%{lua_version}
 %define oname luafilesystem
 %define tarname	1_8_0
 
@@ -13,8 +13,8 @@ Group:          Development/Other
 License:        MIT
 URL:            https://lunarmodules.github.io/luafilesystem/
 Source0:	https://github.com/keplerproject/luafilesystem/archive/v%{tarname}.tar.gz
-BuildRequires:  lua-devel >= %{luaver}
-Requires:       lua >= %{luaver}
+BuildRequires:  lua-devel
+Requires:       lua
 
 %description
 LuaFileSystem offers a portable way to access the
@@ -36,5 +36,5 @@ make install PREFIX=%{buildroot}/%{_prefix} LUA_LIBDIR=%{buildroot}/%{lualibdir}
 
 %files
 %doc doc/us/*
-%doc README
+%doc README.md
 %{lualibdir}/*
