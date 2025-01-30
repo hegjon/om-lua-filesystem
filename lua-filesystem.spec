@@ -2,11 +2,11 @@
 %define lualibdir %{_libdir}/lua/%{luaver}
 %define luapkgdir %{_datadir}/lua/%{luaver}
 %define oname luafilesystem
-%define tarname	1_6_2
+%define tarname	1_8_0
 
 Name:           lua-filesystem
 Version:	1.8.0
-Release:	2
+Release:	3
 Summary:        FileSystem Tool for the Lua language
 
 Group:          Development/Other
